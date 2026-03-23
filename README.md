@@ -13,9 +13,11 @@ The font covers the full printable ASCII range plus a small selection of extende
 - ASCII punctuation: ``! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~``
 - Extended: `£ ¥ – — • €`
 
+![Pyxel Mono character set](docs/Pyxel-Mono-CharSet.png)
+
 ## Installation
 
-Copy `pyxel_mono.py` to the root of your Pico's filesystem using [Thonny](https://thonny.org/):
+Copy `pyxel_mono.py` to the root of your Pico's filesystem.
 
 No other dependencies are required beyond the standard Pimoroni MicroPython build.
 
@@ -121,11 +123,15 @@ display.update()
 
 ## API reference
 
-### `PyxelMono(display)`
+```python
+PyxelMono(display)
+```
 
 Wraps a `PicoGraphics` instance. All methods not listed below are forwarded directly to the underlying display.
 
-### `display.text(text, x, y, wordwrap=-1, scale=1, spacing=1)`
+```python
+display.text(text, x, y, wordwrap=-1, scale=1, spacing=1)
+```
 
 Draw a string using Pyxel Mono.
 
@@ -140,7 +146,9 @@ Draw a string using Pyxel Mono.
 
 Colour is determined by the pen currently set on the display via `display.set_pen()`.
 
-### `display.character(char, x, y, scale=1)`
+```python
+display.character(char, x, y, scale=1)
+```
 
 Draw a single character by its decimal ASCII code.
 
@@ -151,7 +159,9 @@ Draw a single character by its decimal ASCII code.
 | `y`       | `int` | —       | Top edge of the glyph cell (pixels)              |
 | `scale`   | `int` | `1`     | Integer pixel scale factor                       |
 
-### `display.measure_text(text, scale=1, spacing=1)`
+```python
+display.measure_text(text, scale=1, spacing=1)
+```
 
 Return the pixel width of a string without drawing it.
 
@@ -202,5 +212,3 @@ ord('¿'): [  # '¿'
     ".....",
 ],
 ```
-
-Glyphs are bit-packed at import time, so there is no runtime cost for larger character sets.
