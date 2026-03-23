@@ -4,8 +4,6 @@ A custom monospaced pixel bitmap font for the [Pimoroni Pico Display Pack](https
 
 Pyxel Mono is designed as a drop-in display wrapper: wrap your `PicoGraphics` instance once and use `.text()`, `.character()`, and `.measure_text()` with the same API you already know, while all other display calls pass through untouched.
 
----
-
 ## Supported characters
 
 The font covers the full printable ASCII range plus a small selection of extended characters:
@@ -15,15 +13,11 @@ The font covers the full printable ASCII range plus a small selection of extende
 - ASCII punctuation: ``! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~``
 - Extended: `£ ¥ – — • €`
 
----
-
 ## Installation
 
 Copy `pyxel_mono.py` to the root of your Pico's filesystem using [Thonny](https://thonny.org/):
 
 No other dependencies are required beyond the standard Pimoroni MicroPython build.
-
----
 
 ## Usage
 
@@ -125,15 +119,11 @@ display.text("The quick brown fox jumps over the lazy dog.", 10, 82, wordwrap=WI
 display.update()
 ```
 
----
-
 ## API reference
 
 ### `PyxelMono(display)`
 
 Wraps a `PicoGraphics` instance. All methods not listed below are forwarded directly to the underlying display.
-
----
 
 ### `display.text(text, x, y, wordwrap=-1, scale=1, spacing=1)`
 
@@ -150,8 +140,6 @@ Draw a string using Pyxel Mono.
 
 Colour is determined by the pen currently set on the display via `display.set_pen()`.
 
----
-
 ### `display.character(char, x, y, scale=1)`
 
 Draw a single character by its decimal ASCII code.
@@ -163,9 +151,7 @@ Draw a single character by its decimal ASCII code.
 | `y`       | `int` | —       | Top edge of the glyph cell (pixels)              |
 | `scale`   | `int` | `1`     | Integer pixel scale factor                       |
 
----
-
-### `display.measure_text(text, scale=1, spacing=1, fixed_width=False)`
+### `display.measure_text(text, scale=1, spacing=1)`
 
 Return the pixel width of a string without drawing it.
 
@@ -174,8 +160,6 @@ Return the pixel width of a string without drawing it.
 | `text`    | `str` | —       | String to measure                                                          |
 | `scale`   | `int` | `1`     | Integer pixel scale factor                                                 |
 | `spacing` | `int` | `1`     | Extra pixels between characters — must match the value passed to `.text()` |
-
----
 
 ## Customising glyphs
 
